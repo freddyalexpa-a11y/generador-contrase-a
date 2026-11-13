@@ -1,0 +1,14 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+input, code, span#lengthVal {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
+.copied-feedback {
+    background-color: #10b981 !important;
+    color: #067b41 !important;
+}

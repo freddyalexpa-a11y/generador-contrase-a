@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador y Evaluador de Contraseñas</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl">
+        <h1 class="text-xl font-bold mb-1 text-center">🔐 Generador de Contraseñas</h1>
+        <p class="text-xs text-slate-400 text-center mb-6">Crea claves seguras y evalúa su fuerza en tiempo real</p>
+
+        
+        <div class="relative mb-5">
+            <input type="text" id="passwordInput" placeholder="Tu contraseña aquí..." 
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 font-mono text-lg text-emerald-400 focus:outline-none focus:border-emerald-500 transition">
+            <button id="copyBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg text-xs font-medium transition">
+                Copiar
+            </button>
+        </div>
+
+        
+        <div class="mb-6">
+            <div class="flex justify-between text-xs mb-1.5">
+                <span class="text-slate-400">Seguridad:</span>
+                <span id="strengthText" class="font-semibold text-slate-500">Vacío</span>
+            </div>
+            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+                <div id="strengthBar" class="h-full w-0 transition-all duration-300"></div>
+            </div>
+        </div>
+
+        
+        <div class="space-y-4 mb-6">
+            <div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-slate-300">Longitud:</span>
+                    <span id="lengthVal" class="font-mono font-bold text-emerald-400">12</span>
+                </div>
+                <input type="range" id="lengthRange" min="6" max="30" value="12" 
+                    class="w-full accent-emerald-500 cursor-pointer">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-sm text-slate-300">
+                <label class="flex items-center space-x-2 cursor-pointer bg-slate-950 p-2.5 rounded-xl border border-slate-800 hover:border-slate-700">
+                    <input type="checkbox" id="uppercase" checked class="accent-emerald-500 w-4 h-4 rounded">
+                    <span>Mayúsculas</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer bg-slate-950 p-2.5 rounded-xl border border-slate-800 hover:border-slate-700">
+                    <input type="checkbox" id="lowercase" checked class="accent-emerald-500 w-4 h-4 rounded">
+                    <span>Minúsculas</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer bg-slate-950 p-2.5 rounded-xl border border-slate-800 hover:border-slate-700">
+                    <input type="checkbox" id="numbers" checked class="accent-emerald-500 w-4 h-4 rounded">
+                    <span>Números</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer bg-slate-950 p-2.5 rounded-xl border border-slate-800 hover:border-slate-700">
+                    <input type="checkbox" id="symbols" checked class="accent-emerald-500 w-4 h-4 rounded">
+                    <span>Símbolos</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Botón Generar -->
+        <button id="generateBtn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
+            Generar Contraseña
+        </button>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
